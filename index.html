@@ -4,221 +4,371 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Taaga Couture | Ethnic Wear</title>
+<title>Taaga Couture | Designer Ethnic Wear</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#faf8f4;color:#222}
-header{background:#111;color:#d9bd79;text-align:center;padding:25px 12px}
-header h1{margin:0;font-family:Georgia,serif;letter-spacing:3px}
-header p{margin:8px 0 0;font-size:12px;letter-spacing:2px}
-nav{background:#222;display:flex;justify-content:center;gap:22px;padding:13px;flex-wrap:wrap}
-nav a{color:white;text-decoration:none;font-size:13px}
-.hero{background:linear-gradient(120deg,#171717,#51402b);color:#f2d99c;text-align:center;padding:55px 15px}
-.hero h2{font-family:Georgia,serif;font-size:32px;margin:0 0 12px}
+body{margin:0;font-family:Arial,sans-serif;background:#faf7f2;color:#29231e}
+header{background:#17120f;color:#d9b779;text-align:center;padding:25px 10px}
+header h1{font-family:Georgia,serif;letter-spacing:4px;margin:0}
+header p{font-size:12px;letter-spacing:3px}
+nav{background:#30251e;padding:14px;text-align:center;position:sticky;top:0;z-index:10}
+nav a{color:white;text-decoration:none;margin:0 10px;font-size:13px}
+.hero{background:linear-gradient(120deg,#17120f,#725033);color:#f4d99c;text-align:center;padding:65px 15px}
+.hero h2{font:36px Georgia,serif}
 .hero p{color:white}
-.section{padding:28px 15px;max-width:1100px;margin:auto}
-.section h2{text-align:center;font-family:Georgia,serif}
-.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(155px,1fr));gap:15px}
-.product{background:white;border:1px solid #e5dfd3;padding:10px;border-radius:8px}
-.product img{width:100%;height:210px;object-fit:cover;background:#eee}
-.product h3{font-size:15px;margin:10px 0 5px}
-.price{font-weight:bold;color:#8b682d}
-button{background:#171717;color:#f2d99c;border:0;padding:11px 14px;border-radius:5px;cursor:pointer}
-button:hover{background:#493b27}
-.product button{width:100%;margin-top:8px}
-.cart-item{display:flex;justify-content:space-between;gap:10px;border-bottom:1px solid #ddd;padding:10px 0}
-input,textarea{width:100%;padding:12px;margin:7px 0 12px;border:1px solid #ccc;border-radius:5px;font-size:15px}
-label{font-size:14px;font-weight:bold}
-.panel{background:white;padding:18px;border:1px solid #e5dfd3;border-radius:8px;margin:15px 0}
-.policy{background:#f0e9dc;padding:18px;border-radius:8px;line-height:1.7}
-.qr{border:2px dashed #b59a61;padding:25px;text-align:center;background:#fffaf0}
-footer{background:#111;color:#ddd;text-align:center;padding:22px;font-size:13px}
-.small{font-size:12px;color:#666;line-height:1.6}
+.btn{background:#a87b40;color:white;border:0;padding:13px 18px;border-radius:5px;font-weight:bold;cursor:pointer}
+.section{max-width:1100px;margin:auto;padding:35px 15px}
+.section h2{text-align:center;font:28px Georgia,serif;color:#64472c;margin-bottom:25px}
+.products{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.product{background:white;border-radius:8px;overflow:hidden;box-shadow:0 2px 12px #0001}
+.product img{width:100%;height:260px;object-fit:cover}
+.info{padding:15px}
+.info h3{font-size:17px}
+.price{font-size:20px;color:#9b682e;font-weight:bold;margin:12px 0}
+.info button{width:100%}
+.panel{background:white;padding:20px;border-radius:9px;box-shadow:0 2px 12px #0001;margin:15px 0}
+.cart-item{display:flex;justify-content:space-between;align-items:center;gap:10px;border-bottom:1px solid #ddd;padding:12px 0}
+.cart-item button{padding:5px 10px}
+.total{text-align:right;font-size:22px;font-weight:bold;margin:20px 0}
+label{display:block;font-weight:bold;font-size:14px;margin-top:13px}
+input,textarea{width:100%;padding:13px;margin-top:6px;border:1px solid #ccc;border-radius:5px;font-size:15px;background:white}
+input:focus,textarea:focus{outline:2px solid #c9a36b}
+input.invalid,textarea.invalid{border:2px solid #d52222;background:#fff4f4}
+.error{color:#d52222;font-size:12px;display:block;min-height:15px;margin-top:3px}
+.shake{animation:shake .35s}
+@keyframes shake{
+0%,100%{transform:translateX(0)}
+20%,60%{transform:translateX(-6px)}
+40%,80%{transform:translateX(6px)}
+}
+.optional{font-weight:normal;color:#777;font-size:12px}
+.policy{background:#eee4d7;text-align:center;padding:30px 15px;line-height:1.8}
+#payment{display:none}
+#qr{width:230px;height:230px;object-fit:contain;display:block;margin:15px auto}
+.notice{background:#fff3d8;padding:13px;border-radius:5px;font-size:13px;line-height:1.6}
+.small{font-size:13px;color:#666;line-height:1.6}
+footer{background:#17120f;color:white;text-align:center;padding:25px;line-height:1.8}
+@media(max-width:500px){
+.hero h2{font-size:29px}
+nav a{margin:0 5px;font-size:12px}
+.product img{height:230px}
+}
 </style>
 </head>
+
 <body>
 
 <header>
-  <h1>TAAGA COUTURE</h1>
-  <p>THE BEAUTY OF ETHNIC ELEGANCE</p>
+<h1>TAAGA COUTURE</h1>
+<p>THE ELEGANCE OF ETHNIC WEAR</p>
 </header>
 
 <nav>
-  <a href="#home">Home</a>
-  <a href="#collection">Collection</a>
-  <a href="#cart">My Cart</a>
-  <a href="#policy">Policies</a>
+<a href="#home">HOME</a>
+<a href="#collection">SHOP</a>
+<a href="#cart">MY CART</a>
+<a href="#policy">POLICY</a>
 </nav>
 
 <section class="hero" id="home">
-  <h2>Elegance in Every Thread</h2>
-  <p>Discover beautiful ethnic wear at Taaga Couture</p>
-  <a href="#collection"><button>SHOP COLLECTION</button></a>
+<h2>Elegance in Every Thread</h2>
+<p>Discover Beautiful Designer Ethnic Wear</p>
+<a href="#collection"><button class="btn">SHOP NOW</button></a>
 </section>
 
 <section class="section" id="collection">
-  <h2>Our Collection</h2>
-  <p style="text-align:center">Explore our latest suit collection</p>
-  <div class="products" id="products"></div>
+<h2>Our Collection</h2>
+<div class="products" id="products"></div>
 </section>
 
 <section class="section" id="cart">
-  <h2>Your Shopping Cart</h2>
-  <div class="panel">
-    <div id="cartItems">Your cart is empty.</div>
-    <h3 id="total">Total: ₹0</h3>
-  </div>
+<h2>Shopping Cart</h2>
+<div class="panel">
+<div id="cartItems">Your cart is empty.</div>
+<div class="total" id="total">Total: ₹0</div>
 
-  <h2>Checkout Details</h2>
-  <div class="panel">
-    <form id="orderForm">
-      <label>Full Name</label>
-      <input id="customerName" required placeholder="Enter your name">
+<h2>Delivery Information</h2>
+<p class="small">Please enter your correct delivery details. All fields are mandatory except House / Flat No.</p>
 
-      <label>Mobile Number</label>
-      <input id="mobile" type="tel" required pattern="[0-9]{10}" placeholder="10 digit mobile number">
+<form id="orderForm" novalidate>
 
-      <label>Full Delivery Address</label>
-      <textarea id="address" required placeholder="House number, street, city, state, PIN code"></textarea>
+<label>Full Name *</label>
+<input id="fullName" placeholder="Enter your full name">
+<span class="error" id="fullNameError"></span>
 
-      <label>Payment Method</label>
-      <p>UPI QR payment (manual payment verification)</p>
+<label>House / Flat No. <span class="optional">(Optional)</span></label>
+<input id="house" placeholder="Enter house or flat number">
 
-      <div class="qr">
-        <h3>SCAN & PAY</h3>
-        <p>Our UPI QR code will be added here.</p>
-        <p class="small">Please confirm payment with us before dispatch.</p>
-      </div>
+<label>Landmark (Nearby Place) *</label>
+<input id="landmark" placeholder="Enter a nearby landmark">
+<span class="error" id="landmarkError"></span>
 
-      <label>UPI Transaction ID (after payment)</label>
-      <input id="transaction" placeholder="Enter UPI transaction ID">
+<label>Area / Locality *</label>
+<input id="area" placeholder="Enter your area or locality">
+<span class="error" id="areaError"></span>
 
-      <button type="submit">PLACE ORDER ON WHATSAPP</button>
-    </form>
-    <p class="small">Your order will be sent to our WhatsApp for confirmation. Payment is not automatically verified by this website.</p>
-  </div>
+<label>State *</label>
+<input id="state" placeholder="Enter your state">
+<span class="error" id="stateError"></span>
+
+<label>PIN Code *</label>
+<input id="pincode" inputmode="numeric" maxlength="6" placeholder="Enter 6-digit PIN code">
+<span class="error" id="pincodeError"></span>
+
+<label>Phone Number *</label>
+<input id="phone" type="tel" inputmode="numeric" maxlength="10" placeholder="Enter 10-digit phone number">
+<span class="error" id="phoneError"></span>
+
+<div style="margin-top:20px">
+<label style="font-weight:normal">
+<input type="checkbox" id="agree" style="width:auto">
+I have read and agree to the No Return / No Refund policy. *
+</label>
+<span class="error" id="agreeError"></span>
+</div>
+
+<button class="btn" type="submit" style="width:100%;margin-top:20px">
+PROCEED TO PAYMENT
+</button>
+</form>
+</div>
 </section>
 
-<section class="section" id="policy">
-  <h2>Our Policies</h2>
-  <div class="policy">
-    <strong>NO RETURN • NO REFUND</strong><br>
-    No return and no refund on orders.<br><br>
-    <strong>DEFECTIVE PRODUCT EXCHANGE</strong><br>
-    Exchange is applicable only for defective pieces.
-    A complete 360-degree HD, uncut parcel-opening video
-    is mandatory to claim an exchange.
-  </div>
+<section class="section" id="payment">
+<h2>UPI Payment</h2>
+<div class="panel" style="text-align:center">
+<h3>Scan QR Code to Pay</h3>
+<img id="qr" alt="UPI payment QR code">
+<div class="price" id="payAmount"></div>
+<p id="orderNumber"></p>
+
+<div class="notice">
+Please scan the QR code using Google Pay, PhonePe or another UPI app. Check the amount and recipient before paying.
+<br><br>
+Your payment is not automatically verified by this website. Please send your payment confirmation and order details on WhatsApp.
+</div>
+
+<button class="btn" onclick="sendWhatsApp()" style="width:100%;margin-top:20px">
+SEND ORDER DETAILS ON WHATSAPP
+</button>
+</div>
+</section>
+
+<section class="policy" id="policy">
+<h2>OUR RETURN & EXCHANGE POLICY</h2>
+<p><b>NO RETURN. NO REFUND.</b></p>
+<p>Only defective pieces are eligible for exchange.</p>
+<p>For exchange claims, a complete 360-degree HD and uncut parcel opening video is compulsory.</p>
+<p>Please check all order details carefully before placing your order.</p>
 </section>
 
 <footer>
-  <h3>TAAGA COUTURE</h3>
-  <p>For orders and enquiries, contact us on WhatsApp.</p>
-  <p>© Taaga Couture. All Rights Reserved.</p>
+<h3>TAAGA COUTURE</h3>
+<p>Beautiful Ethnic Wear | All India Delivery</p>
+<p>Orders & Queries: 8059807855</p>
+<p>© 2026 Taaga Couture. All Rights Reserved.</p>
 </footer>
 
 <script>
-const WHATSAPP_NUMBER = "918059807855";
 
-// Replace these sample products with your real products and prices.
+// YOUR STORE DETAILS
+const UPI_ID = "YOUR_UPI_ID_HERE";
+const WHATSAPP_NUMBER = "918059807855";
+const STORE_NAME = "Taaga Couture";
+
+// DEMO PRODUCTS - REPLACE WITH YOUR REAL SUITS
 const products = [
-  {id:1,name:"Designer Suit 1",price:499,image:"images/suit1.jpg"},
-  {id:2,name:"Designer Suit 2",price:499,image:"images/suit2.jpg"},
-  {id:3,name:"Designer Suit 3",price:499,image:"images/suit3.jpg"}
+ {id:1,name:"Designer Ethnic Suit",price:499,image:"https://placehold.co/500x600/f0e6d7/533b26?text=Your+Suit+Photo"},
+ {id:2,name:"Premium Organza Suit",price:999,image:"https://placehold.co/500x600/e9dfd2/533b26?text=Your+Suit+Photo"},
+ {id:3,name:"Partywear Designer Suit",price:1299,image:"https://placehold.co/500x600/e5d8c8/533b26?text=Your+Suit+Photo"},
+ {id:4,name:"Exclusive Collection",price:1499,image:"https://placehold.co/500x600/eee2d4/533b26?text=Your+Suit+Photo"}
 ];
 
-let cart = [];
+let cart=[];
+let currentOrder=null;
 
 function showProducts(){
-  const area = document.getElementById("products");
-  area.innerHTML = products.map(p => `
-    <div class="product">
-      <img src="${p.image}" alt="${p.name}"
-      onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-      <div style="display:none;height:210px;background:#eee;text-align:center;padding-top:85px">
-        Add product photo
-      </div>
-      <h3>${p.name}</h3>
-      <div class="price">₹${p.price}</div>
-      <button onclick="addToCart(${p.id})">ADD TO CART</button>
-    </div>
-  `).join("");
+ document.getElementById("products").innerHTML=products.map(p=>`
+ <div class="product">
+ <img src="${p.image}" alt="${p.name}">
+ <div class="info">
+ <h3>${p.name}</h3>
+ <div class="price">₹${p.price}</div>
+ <button class="btn" onclick="addToCart(${p.id})">ADD TO CART</button>
+ </div>
+ </div>`).join("");
 }
 
 function addToCart(id){
-  const product = products.find(p => p.id === id);
-  const existing = cart.find(item => item.id === id);
-  if(existing){existing.quantity++;}
-  else{cart.push({...product,quantity:1});}
-  showCart();
+ let p=products.find(x=>x.id===id);
+ let found=cart.find(x=>x.id===id);
+ if(found)found.qty++;
+ else cart.push({...p,qty:1});
+ showCart();
 }
 
-function removeItem(id){
-  cart = cart.filter(item => item.id !== id);
-  showCart();
+function changeQty(id,amount){
+ let item=cart.find(x=>x.id===id);
+ if(!item)return;
+ item.qty+=amount;
+ if(item.qty<=0)cart=cart.filter(x=>x.id!==id);
+ showCart();
 }
 
 function showCart(){
-  const area = document.getElementById("cartItems");
-  if(cart.length === 0){
-    area.innerHTML = "Your cart is empty.";
-  }else{
-    area.innerHTML = cart.map(item => `
-      <div class="cart-item">
-        <span>${item.name} × ${item.quantity}</span>
-        <span>₹${item.price * item.quantity}
-        <button onclick="removeItem(${item.id})">Remove</button></span>
-      </div>
-    `).join("");
-  }
-  const total = cart.reduce((sum,item)=>sum+item.price*item.quantity,0);
-  document.getElementById("total").innerText = "Total: ₹" + total;
+ let area=document.getElementById("cartItems");
+ if(cart.length===0){
+  area.innerHTML="Your cart is empty.";
+ }else{
+  area.innerHTML=cart.map(item=>`
+  <div class="cart-item">
+  <div><b>${item.name}</b><br>₹${item.price} × ${item.qty}</div>
+  <div>
+  <button onclick="changeQty(${item.id},-1)">−</button>
+  ${item.qty}
+  <button onclick="changeQty(${item.id},1)">+</button>
+  </div></div>`).join("");
+ }
+ let total=cart.reduce((s,p)=>s+p.price*p.qty,0);
+ document.getElementById("total").innerText="Total: ₹"+total;
 }
 
-document.getElementById("orderForm").addEventListener("submit",function(e){
-  e.preventDefault();
+// FIELD VALIDATION
+const fields=[
+ {id:"fullName",message:"Please enter your full name."},
+ {id:"landmark",message:"Please enter a nearby landmark."},
+ {id:"area",message:"Please enter your area or locality."},
+ {id:"state",message:"Please enter your state."},
+ {id:"pincode",message:"Please enter a valid 6-digit PIN code.",test:v=>/^[0-9]{6}$/.test(v)},
+ {id:"phone",message:"Please enter a valid 10-digit phone number.",test:v=>/^[6-9][0-9]{9}$/.test(v)}
+];
 
-  if(cart.length === 0){
-    alert("Please add a suit to your cart first.");
-    return;
-  }
+function validateField(field){
+ let input=document.getElementById(field.id);
+ let error=document.getElementById(field.id+"Error");
+ let value=input.value.trim();
+ let valid=value.length>0 && (!field.test || field.test(value));
 
-  const name = document.getElementById("customerName").value.trim();
-  const mobile = document.getElementById("mobile").value.trim();
-  const address = document.getElementById("address").value.trim();
-  const transaction = document.getElementById("transaction").value.trim();
+ input.classList.toggle("invalid",!valid);
+ error.textContent=valid?"":field.message;
 
-  const orderId = "TC" + Date.now().toString().slice(-8);
-  const total = cart.reduce((sum,item)=>sum+item.price*item.quantity,0);
+ if(!valid){
+  input.classList.remove("shake");
+  void input.offsetWidth;
+  input.classList.add("shake");
+ }
+ return valid;
+}
 
-  const items = cart.map(item =>
-    item.name + " x " + item.quantity + " = Rs." + (item.price*item.quantity)
-  ).join("\n");
-
-  const message =
-`NEW ORDER - TAAGA COUTURE
-
-Order ID: ${orderId}
-Name: ${name}
-Mobile: ${mobile}
-Address: ${address}
-
-Products:
-${items}
-
-Total: Rs.${total}
-UPI Transaction ID: ${transaction || "Not provided"}
-
-Please confirm my order.`;
-
-  alert("Your Order ID is: " + orderId);
-
-  const url = "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
-  window.open(url,"_blank");
+fields.forEach(field=>{
+ document.getElementById(field.id).addEventListener("blur",()=>{
+  validateField(field);
+ });
+ document.getElementById(field.id).addEventListener("input",()=>{
+  let input=document.getElementById(field.id);
+  if(input.classList.contains("invalid"))validateField(field);
+ });
 });
+
+document.getElementById("orderForm").addEventListener("submit",function(e){
+ e.preventDefault();
+
+ if(cart.length===0){
+  alert("Please add a suit to your cart first.");
+  return;
+ }
+
+ let valid=true;
+ let firstInvalid=null;
+
+ fields.forEach(field=>{
+  if(!validateField(field)){
+   valid=false;
+   if(!firstInvalid)firstInvalid=document.getElementById(field.id);
+  }
+ });
+
+ let agree=document.getElementById("agree");
+ let agreeError=document.getElementById("agreeError");
+ agreeError.textContent=agree.checked?"":"Please accept the shopping policy.";
+ if(!agree.checked)valid=false;
+
+ if(!valid){
+  if(firstInvalid){
+   firstInvalid.scrollIntoView({behavior:"smooth",block:"center"});
+   firstInvalid.focus();
+  }else{
+   agree.scrollIntoView({behavior:"smooth",block:"center"});
+  }
+  return;
+ }
+
+ if(UPI_ID==="YOUR_UPI_ID_HERE"){
+  alert("Store owner: Please add your real UPI ID in the code first.");
+  return;
+ }
+
+ let total=cart.reduce((s,p)=>s+p.price*p.qty,0);
+ let orderId="TC"+Date.now().toString().slice(-9);
+
+ currentOrder={
+  id:orderId,
+  name:document.getElementById("fullName").value.trim(),
+  house:document.getElementById("house").value.trim(),
+  landmark:document.getElementById("landmark").value.trim(),
+  area:document.getElementById("area").value.trim(),
+  state:document.getElementById("state").value.trim(),
+  pincode:document.getElementById("pincode").value.trim(),
+  phone:document.getElementById("phone").value.trim(),
+  total:total,
+  items:cart.map(p=>({...p}))
+ };
+
+ let upiLink="upi://pay?pa="+encodeURIComponent(UPI_ID)+
+ "&pn="+encodeURIComponent(STORE_NAME)+
+ "&am="+total.toFixed(2)+
+ "&cu=INR"+
+ "&tn="+encodeURIComponent("Order "+orderId);
+
+ let qrURL="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data="+encodeURIComponent(upiLink);
+
+ document.getElementById("qr").src=qrURL;
+ document.getElementById("payAmount").innerText="Amount to Pay: ₹"+total;
+ document.getElementById("orderNumber").innerText="Your Order ID: "+orderId;
+
+ document.getElementById("payment").style.display="block";
+ document.getElementById("payment").scrollIntoView({behavior:"smooth"});
+});
+
+function sendWhatsApp(){
+ if(!currentOrder)return;
+
+ let itemText=currentOrder.items.map(p=>
+ p.name+" x "+p.qty+" = ₹"+(p.price*p.qty)
+ ).join("\n");
+
+ let message=
+ "NEW ORDER - TAAGA COUTURE\n\n"+
+ "Order ID: "+currentOrder.id+"\n"+
+ "Customer Name: "+currentOrder.name+"\n"+
+ "House/Flat No.: "+(currentOrder.house||"Not provided")+"\n"+
+ "Landmark: "+currentOrder.landmark+"\n"+
+ "Area: "+currentOrder.area+"\n"+
+ "State: "+currentOrder.state+"\n"+
+ "PIN Code: "+currentOrder.pincode+"\n"+
+ "Phone Number: "+currentOrder.phone+"\n\n"+
+ "ORDER DETAILS:\n"+itemText+
+ "\n\nTotal: ₹"+currentOrder.total+
+ "\nPayment: UPI - Awaiting seller verification"+
+ "\n\nI have submitted my order. Please confirm.";
+
+ window.open("https://wa.me/"+WHATSAPP_NUMBER+"?text="+encodeURIComponent(message),"_blank");
+}
 
 showProducts();
 showCart();
+
 </script>
 </body>
 </html>
